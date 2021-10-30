@@ -1,4 +1,4 @@
-package com.photos.scanner;
+package com.apps.o2o;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.photos.scanner", appContext.getPackageName());
+        assertEquals("com.photos.o2o", appContext.getPackageName());
     }
 }

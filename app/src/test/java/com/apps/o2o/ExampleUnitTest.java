@@ -1,4 +1,4 @@
-package com.photos.scanner;
+package com.apps.o2o;
 
 import org.junit.Test;
 

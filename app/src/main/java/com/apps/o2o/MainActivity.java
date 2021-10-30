@@ -1,4 +1,4 @@
-package com.photos.scanner;
+package com.apps.o2o;
 
 import android.Manifest;
 import android.content.Intent;
@@ -18,6 +18,7 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
+import o2o.R;
 
 public class MainActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler
 {
