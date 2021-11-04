@@ -23,8 +23,6 @@
         <activity
             android:name="com.apps.o2o.MainActivity"
             android:exported="false">
-
         </activity>
     </application>
-
 </manifest>
