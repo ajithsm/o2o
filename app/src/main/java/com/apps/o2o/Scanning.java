@@ -20,16 +20,42 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import o2o.R;
 
-public class MainActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler
+public class Scanning extends AppCompatActivity implements ZXingScannerView.ResultHandler
 {
     private ZXingScannerView scannerView;
     private TextView txtResult;
+    private String store;
+    private String getUrl(String store, String barcode)
+    {
+        String url;
+        switch (store){
+            case "relianceTrends":
+                url = "https://www.ajio.com/search/?text="+ barcode;
+                break;
+            case "maxFashions":
+                url = "https://www.maxfashion.in/in/en/search?q="+ barcode;
+                break;
+            case "westside":
+                url = "https://www.westside.com/search?type=product&q="+ barcode;
+                break;
+            case "lifestyle":
+                url = "https://www.lifestylestores.com/p/"+ barcode;
+                break;
+            default:
+                url = "";
+                break;
+        }
+        return url;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_scanning);
         scannerView = (ZXingScannerView) findViewById(R.id.zxscan);
+        store = getIntent().getExtras().getString("store");
+        Toast.makeText(getApplicationContext(), store, Toast.LENGTH_SHORT).show();
+
         Dexter.withActivity(this)
                 .withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener()
@@ -37,13 +63,13 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse response)
                     {
-                        scannerView.setResultHandler(MainActivity.this);
+                        scannerView.setResultHandler(Scanning.this);
                         scannerView.startCamera();
                     }
                     @Override
                     public void onPermissionDenied(PermissionDeniedResponse response)
                     {
-                        Toast.makeText(MainActivity.this, "You must accept this permission", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Scanning.this, "You must accept this permission", Toast.LENGTH_SHORT).show();
                     }
                     @Override
                     public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
@@ -52,30 +78,23 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 .check();
     }
     public void onPause(){
-        System.out.println("Reached OnPause");
         super.onPause();
     }
     public void onResume(){
-        System.out.println("Reached OnResume");
-        scannerView.setResultHandler(MainActivity.this);
+        scannerView.setResultHandler(Scanning.this);
         scannerView.startCamera();
         super.onResume();
     }
 
     protected void onDestroy()
     {
-        System.out.println("Reached OnDestroy");
         scannerView.stopCamera();
         super.onDestroy();
    }
     @Override
     public void handleResult(Result rawResult) {
-        System.out.println("Reached OnhandleReslt");
-        Intent browse = new Intent( Intent.ACTION_VIEW, Uri.parse( "https://www.ajio.com/search/?text="+rawResult.getText()));
+        String url = getUrl(store, rawResult.getText());
+        Intent browse = new Intent( Intent.ACTION_VIEW, Uri.parse(url));
         startActivity( browse );
-
-//        ProcessPhoenix.triggerRebirth(getApplicationContext());
     }
-
-
 }

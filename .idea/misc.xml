@@ -17,6 +17,8 @@
         <entry key="..\:/Users/kamma/Dev Workspaces/Android/o2o/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/kamma/Dev Workspaces/Android/o2o/app/src/main/res/drawable/long_logo_black_background.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/kamma/Dev Workspaces/Android/o2o/app/src/main/res/layout/activity_flash_screen.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/kamma/Dev Workspaces/Android/o2o/app/src/main/res/layout/activity_home.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/kamma/Dev Workspaces/Android/o2o/app/src/main/res/layout/activity_main.xml" value="0.164453125" />
         <entry key="..\:/Users/kamma/Dev Workspaces/Android/o2o/app/src/main/res/mipmap-anydpi-v26/after_launch_logo.xml" value="0.23541666666666666" />
         <entry key="..\:/Users/kamma/Dev Workspaces/Android/o2o/app/src/main/res/mipmap-anydpi-v26/after_launch_logo_round.xml" value="0.23541666666666666" />
         <entry key="..\:/Users/kamma/Dev Workspaces/Android/o2o/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.23541666666666666" />
@@ -31,5 +33,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.21927083333333333" />
+      </ProjectState>
+    </option>
   </component>
 </project>

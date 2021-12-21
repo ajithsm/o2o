@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white"
+      tools:context=".Home">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/whereAreYou"
+        android:fontFamily="sans-serif"
+        android:text="@string/whereAreYou"
+        android:textSize="30sp"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.271" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="380dp"
+        android:layout_height="580dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/relianceTrendsButton"
+            android:layout_width="392dp"
+            android:layout_height="112dp"
+            android:tag="relianceTrends"
+            android:contentDescription="@string/relianceTrends"
+            android:onClick="goToScanningActivity"
+            android:scaleType="center"
+            android:src="@drawable/ril_trend_big" />
+
+      </TableRow>
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/maxFashionsButton"
+            android:layout_width="392dp"
+            android:layout_height="112dp"
+            android:tag="maxFashions"
+            android:contentDescription="@string/maxFashions"
+            android:onClick="goToScanningActivity"
+            android:scaleType="fitCenter"
+            android:src="@drawable/new_max_logo__eng_with_outline_1"
+            android:visibility="visible"
+            tools:visibility="visible" />
+      </TableRow>
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/westsideButton"
+            android:layout_width="392dp"
+            android:layout_height="112dp"
+            android:tag="westside"
+            android:contentDescription="@string/westside"
+            android:onClick="goToScanningActivity"
+            android:scaleType="fitCenter"
+            android:src="@drawable/westside" />
+      </TableRow>
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/lifestyleButton"
+            android:layout_width="392dp"
+            android:layout_height="112dp"
+            android:tag="lifestyle"
+            android:contentDescription="@string/lifestyle"
+            android:onClick="goToScanningActivity"
+            android:scaleType="fitCenter"
+            android:src="@drawable/lifestyle" />
+      </TableRow>
+    </TableLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

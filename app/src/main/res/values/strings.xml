@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">o2o</string>
     <string name="o2o">o2o</string>
+    <string name="relianceTrends">Reliance Trends</string>
+    <string name="maxFashions">Max Fashions</string>
+    <string name="lifestyle">Lifestyle</string>
+    <string name="westside">Westside</string>
+    <string name="whereAreYou">Where are you?</string>
 </resources>
